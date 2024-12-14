@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canv" width="300" height="300"></canvas>
+    <script>
+        let canv =document.getElementById("canv");
+        let ctx = canv.getContext("2d");
+        for(let i =0; i < 20; i++){
+            let rx = Math.random() *210;
+            let ry = Math.random()*210;
+            ctx.fillStyle = "red";
+            ctx.fillRect(rx,ry,55,49)
+            let rxt = Math.random() *210;
+            let ryt = Math.random()*210;
+            
+            ctx.beginPath();
+            ctx.moveTo(rxt,ryt);
+            ctx.lineTo(rxt+16,ryt +20);
+            ctx.lineTo(rxt+16,ryt+62);
+            ctx.fillStyle = "green";
+            ctx.fill()
+            let cx = Math.random() *210;
+            let cy = Math.random()*210;
+            ctx.beginPath();
+            ctx.arc(cx,cy,30,0,2*Math.PI);
+            ctx.fillStyle = "blue";
+            ctx.fill()
+        }
+    </script>
+</body>
+</html>

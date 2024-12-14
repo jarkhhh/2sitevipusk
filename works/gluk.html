@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: larger;
+        }
+        body{
+            background-color: rgb(90, 78, 181);
+        }
+    </style>
+</head>
+<body>
+    <p>Enter Count</p>
+    <input type="number" name="" id="Count">
+    <p id="res"></p>
+    <script>
+        let c = document.getElementById("Count");
+        c.onchange=function(){
+        for(let i=0; i <= c.value; i++){
+            document.getElementById("res").innerHTML +=`Слава Україні!<br>`;
+        }}
+    </script>
+</body>
+</html>

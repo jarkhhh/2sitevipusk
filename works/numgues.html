@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: blue;
+        }
+        div{
+            background-color: aqua;
+        }
+        p{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Gues the number from 0 to 10</p>
+        <input type="text" id="inp" onchange="c()">
+        <p id="res"></p>
+    </div>
+    <script>
+        let rand = Math.floor(Math.random() * 10);
+        let inp = document.getElementById("inp");
+        let r = document.getElementById("res");
+        let atem = 3;
+        function c(){
+        console.log(rand);
+        if(inp.value ==rand){
+            r.textContent = "Correct"
+        }else{
+            r.textContent ="Incorrect"
+            atem --;
+        }
+        if(atem==0){
+            r.textContent = `Correct is ${rand}`
+        }
+        }
+        
+    </script>
+</body>
+</html>

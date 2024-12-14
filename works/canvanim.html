@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 2px solid gray;
+            border-radius: 3px;
+        }
+        body{
+            background-color: rgb(44, 128, 64);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canv" width="300" height="300"></canvas>
+    <input type="range"  id="inp">
+    <script>
+        let x = 50;
+        let canv =document.getElementById("canv");
+        let ctx = canv.getContext("2d");
+        let rem ="😝";
+        let time = 0;
+        let mdir = 3;
+        window.setInterval(function(){
+            let inten = document.getElementById("inp").value
+            ctx.clearRect(0,0,canv.width,canv.height);
+            x+=mdir;
+            if(x > canv.width-30 | x < 10){
+                mdir *=-1
+            }
+            let y = 100 + Math.sin(time)* inten;
+            
+            ctx.font = "35px serif"
+            ctx.fillText(rem,x,y)
+            let emoji =["😝","😁","🥰","😍","🙂"];
+            if(y < 10){
+                rem = emoji[Math.floor(Math.random()*(emoji.length-1))];
+            }
+            time+=0.3;
+
+        },20);
+    </script>
+</body>
+</html>

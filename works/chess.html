@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt{
+            font-weight: 900 ;
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <p class="txt">Chess desk</p>
+    <canvas width="300" height="300" id="canv"></canvas>
+    <script>
+        const canv = document.getElementById('canv');
+        const ctx = canv.getContext("2d");
+        function line(x,y,x2,y2){
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x2,y2);
+            ctx.lineWidth = 8;
+             ctx.strokeStyle = "gray"
+            ctx.stroke();
+
+        }
+        
+        ctx.fillStyle ="black";
+        
+        ctx.fillRect(0,0,300,300);
+        let cl =false
+        
+        for(let y =0; y <300; y +=37.5){
+            cl =!cl
+            for(let x =0; x <300; x +=37.5){
+                if(cl)
+                ctx.clearRect(x,y,37.5,37.5);
+                cl =!cl
+            }
+        }
+        line(0,0,300,0);
+        line(300,0,300,300);
+        line(0,300,300,300);
+        line(0,0,0,300);
+    </script>
+</body>
+</html>

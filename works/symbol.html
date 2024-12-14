@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <p>Start</p>
+    <input type="number"  id="st">
+    <p>End</p>
+    <input type="number"  id="end">
+    <p id="res"></p>
+    <script>
+        const st = document.getElementById("st");
+        const end = document.getElementById("end");
+        end.onchange=function(){
+        let res = document.getElementById("res");
+        res.innerHTML =""
+        for(let i =st.value; i <= end.value; i++){
+            res.innerHTML +=`&#${i}; -&amp#${i}<br>`
+        }}
+    </script>
+</body>
+</html>

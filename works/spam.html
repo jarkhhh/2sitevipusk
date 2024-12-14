@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+        p{
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+            <textarea id="inp">Enter Text</textarea>
+            <button onclick="enter()">OK</button>
+        
+        <p id="res"></p>
+    </div>
+    <script>
+        const res = document.getElementById("res");
+        const inp =document.getElementById("inp")
+        let str = "";
+        str = str.toLowerCase();
+        
+        function enter(){
+            str =""+inp.value
+            str = str.toLowerCase();
+            console.log(str)
+          if(!checkDenied()) 
+          res.textContent = "Text clear"  
+            else
+            res.textContent = "It is spam"
+        }
+        let deny =["free","garanty","безкоштовно","гарантія"]
+        function checkDenied(){
+            for (let i = 0; i < deny.length; i++) {
+                if(~str.indexOf(deny[i])){
+                    console.log(deny[i])
+                    return true;
+                }
+                
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

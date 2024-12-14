@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkblue;
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            width: 60px;
+        }
+        p{
+            font-size: larger;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <textarea  id="inp"></textarea>
+        <input type="text" id="key">
+        <button onclick="find()">Ok</button>
+        <p id="res"></p>
+    </div>
+    <script>
+        const key = document.getElementById("key");
+        const inp = document.getElementById("inp");
+        const res =document.getElementById("res")
+        function find(){
+            let arr = []
+            let inx =0;
+            while((inx = inp.value.indexOf(key.value,inx)) !==-1){
+                arr.push(inx);
+                inx++;
+            }
+            res.textContent=arr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{display: flex;
+            justify-content: center;
+            background-color: blanchedalmond;
+        }
+        #timer{
+            font-size: 7vw;
+            font-family:'Times New Roman', Times, serif;
+            color: rgb(0, 64, 255);
+            background-color: rgb(27, 171, 24);
+        }
+        .text{
+            font-size: 50px;
+            margin-left: 50%;
+
+        }
+        .hpn{
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <p class="text">TIME TO New Year</p>
+    <p id="timer"></p>
+    </div>
+    <script>
+        window.onload = function(){
+            window.setInterval(function(){
+        let date = new Date()
+        let timer = document.getElementById("timer");
+        
+        let hours = 24 -date.getHours();
+        let minutes = 60-date.getMinutes() ;
+        let sec = 60 -date.getSeconds() ;
+        let month =12 -date.getMonth();
+        let days = 31 - month *date.getDate();
+        let year =date.getFullYear();
+        timer.textContent=` ${days}day ${hours}hour ${minutes}minute ${sec} seconds`;
+         if(days == 31 && minutes == 60 && sec==60){
+            
+            if(year ==2025){
+                document.body.innerHTML += `<p class="hpn">Happy ${year}New Year!</p>`
+                
+            }
+         }       
+        },500)
+    }
+    </script>
+</body>
+</html>

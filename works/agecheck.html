@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .contain{
+            background-color: rgb(44, 44, 44);
+            border-color: white;
+            border-width: 1px;
+            border-style: solid;
+
+        }
+        .contain p{
+            color: white;
+            font-weight: 800;
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <p>Enter your birth date</p>
+        <form action="javascript:check()">
+            <input type="date" id="datei">
+            <button>ok</button>
+        </form>
+    </div>
+    <script>
+        const date = document.getElementById("datei");
+        function check(){
+            let cdate = new Date();
+            let val =date.value
+            let b =val.split('-');
+            let year = b[0]
+
+            if(cdate.getFullYear()-year >= 16){
+                alert("Welcome!");
+            }
+            else{
+                alert("Your age too low! Access denied");
+            }
+        }
+    </script>
+</body>
+</html>

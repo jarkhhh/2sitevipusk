@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="javascript:gen()">
+        <p>Enter count</p>
+        <input type="text" name="" id="n">
+        <button>ok</button>
+    </form>
+    <p id="res"></p>
+    <script>
+        const inp = document.getElementById("n");
+        const res = document.getElementById("res");
+        let numbers = [0,1];
+        function gen(){
+            let num =1;
+            res.textContent = ""
+            for (let i = 1; i < +inp.value; i++) {
+              num = numbers[i] + numbers[i-1];
+              res.textContent += ` ${num}`
+              numbers.push(num);
+            }
+        }
+    </script>
+    
+</body>
+</html>

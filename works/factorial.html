@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(193, 128, 136);
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            font-size: 30px;
+        }
+        input{
+            width: 95%;
+        }
+        .cont{
+            background-color: rgb(150, 107, 112); 
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <input type="number" onchange="calc(this)">
+    <p id="result"></p>
+    </div>
+    <script>
+       function calc(el){
+        let n = 1;
+        for(let i =el.value; i > 0; i--) {
+            n *=i;
+            console.log(i)
+        }
+        document.getElementById("result").textContent = "factorial is: "+n
+       }
+    </script>
+</body>
+</html>

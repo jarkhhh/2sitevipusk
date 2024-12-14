@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkmagenta;
+        }
+        div{
+            background-color: rgb(135, 0, 135); 
+        }
+        p{
+            color: white;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    
+    <input type="number" onchange="Enter()" id="inp">
+    <p id="p"></p>
+    </div>
+    <script>
+        const p = document.getElementById("p");
+        const inp = document.getElementById("inp");
+        function Enter(){
+            let str = ""+inp.value;
+            p.textContent = str.length
+        }
+    </script>
+</body>
+</html>

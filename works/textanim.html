@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .cont1{
+        display: flex;
+       }
+       .leter{
+        font-size: 40px;
+        animation-name: anim;
+        animation-duration: 3s ;
+        animation-iteration-count: infinite;
+       }
+       .let2{
+        font-size: 40px;
+        animation-name: let2;
+        animation-duration: 3s ;
+        animation-iteration-count: infinite;
+       }
+       .let3{
+        font-size: 40px;
+        animation-name: shake;
+        animation-duration: 0.3s ;
+        animation-iteration-count: infinite;
+       }
+       @keyframes shake {
+        0%{
+            transform: translateY(-5px);
+            
+        }
+        50%{
+            transform: translateY(5px); 
+            
+        }
+        100%{
+            transform: translateY(-5px);
+            
+        }
+       }
+       @keyframes anim {
+        0%{
+            transform: rotateY(0deg);
+            margin-left: 0px;
+        }
+        50%{
+            transform: rotateY(75deg); 
+            margin-left: 5px;
+        }
+        100%{
+            transform: rotateY(360deg);
+            
+        }
+       }
+       @keyframes let2 {
+        0%{
+            transform: rotateZ(0deg);
+            
+        }
+        50%{
+            transform: rotateZ(50deg); 
+            
+        }
+        100%{
+            transform: rotateZ(0deg);
+            
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="cont1" id="t1"></div>
+    <script>
+        function createAnimText(text,cl){
+            let box= document.createElement("div");
+            
+            for (let i = 0; i < text.length; i++) {
+            let s =text[i]
+            box.innerHTML+=`<div class="${cl}">${s}</div>`
+            if(s ==" "){
+                box.innerHTML +=`&nbsp;`
+            }
+        }
+        box.style.display="flex"
+        document.body.insertAdjacentElement("beforeend",box)
+    }
+        createAnimText("Hello World","leter")
+        createAnimText("Second Text","let2")
+        createAnimText("Shaking Text","let3")
+    </script>
+</body>
+</html>

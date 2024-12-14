@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .cont{
+            width: 100%;
+            background-image: url("/img/images.jpg");
+            height: 400px;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            font-size: 30px;
+        }
+        #inp{
+            width: 80px;
+            height: 30px;
+        }
+        .conf{
+            display: flex;
+            background-color: rgba(155, 156, 156, 0.314);
+        }
+        .conf button{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div>
+            <p>Mark rate</p>
+            <div class="conf">
+            <input id="inp">
+            <button onclick="grades()">OK</button>
+            </div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function grades(){
+        let grade = +document.getElementById("inp").value;
+        let p=document.getElementById("result")
+switch(grade){
+    case 1:
+    case 2:
+    case 3:
+        string='Дуже низький';
+        break;
+    case 4:
+    case 5:
+    case 6:
+        string='Низький';
+        break;
+    case 7:
+    case 8:
+    case 9:
+        string='Достатній';
+        break;
+    case 10:
+    case 11:
+    case 12:
+        string='Високий';
+        break;
+default:
+    string='Такої оцінки не існує.'
+}
+p.textContent = string;
+}
+    
+    </script>
+</body>
+</html>

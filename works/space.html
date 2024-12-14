@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("img/360_F_128985367_mNdX0b56w6OcgiyUDnZwukpK1bkpfWwI.jpg");
+        
+        }
+        .contain{
+            background-color: #3a3a3c;
+            width: 300px;
+            opacity: 0.7;
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            color: #a1a1a1;
+            font-size: 40px;
+        }
+        #result{
+            font-size: 10vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <p class="text">Коли Юрій Гагарін полетів у космос?</p>
+        <input type="date" id="inp">
+        <button onclick="check()">OK</button>
+    </div>
+    <p id="result"></p>
+    <script>
+        const res = document.getElementById("result");
+        const inp = document.getElementById("inp");
+        function check(){
+            let str = ""
+            if(inp.value == "1961-04-12"){
+                str ="Правильно"
+            }
+            else
+                str = "НЕ Вірно"
+            res.textContent=str;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Simulator</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="atm-container">
+            <h1>ATM Simulator</h1>
+            <input type="number" id="num" placeholder="Enter amount">
+            <button onclick="getMoney()">Withdraw</button>
+            <p id="res"></p>
+        </div>
+    </div>
+
+    <script>
+        function getMoney() {
+            const inp = document.getElementById("num");
+            const money = +inp.value;
+            const txt = document.getElementById("res");
+            
+            if (money < 50 || money > 100000 || money % 10 !== 0) {
+                txt.textContent = "ERROR: Invalid amount";
+                txt.style.color = "red";
+            } else {
+                txt.textContent = `You withdrew: ${money} UAH`;
+                txt.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

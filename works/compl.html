@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #c{
+            background-color: cyan;
+            
+        }
+        p{
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+   <div id="c">
+    <input type="number" onchange="gen(this)">
+    
+   </div> 
+   <script>
+    let animals = ['kangoroo','elephant','cat','dog','girafe','camel','crocodile'];
+    let compl = ['fast','smart','beatiful','cute','big','careful']
+    const c = document.getElementById("c");
+    function gen(el){
+        c.innerHTML = `<input type="number" onchange="gen(this)">`;
+        for (let i = 1; i <= el.value; i++) {
+            let txt = document.getElementById("result");
+        c.innerHTML+=`<p>${i})You are: ${compl[Math.floor(Math.random()*(compl.length-1))] } as ${animals[Math.floor(Math.random()*(animals.length-1))] }</p><br>`;
+            
+        }
+        
+    }
+   </script>
+</body>
+</html>

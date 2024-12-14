@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: rgb(255, 157, 0);
+            width: 200px;
+            margin-left: 45%;
+            border-radius: 4px;
+        }
+        .butt{
+            background-color: rgb(193, 124, 13);
+            border-color: transparent;
+        }
+        p{
+            font-weight: 800;
+        }
+        input{
+            margin-top: 3px;
+            border-color: transparent;
+            background-color: rgb(193, 124, 13);
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Calculate Power</p>
+        <input type="text" id="a" placeholder="a">
+        <input type="text" id="b" placeholder="b">
+        <button onclick="calc()" class="butt">ok</button>
+        <p id="res"></p>
+    </div>
+    <script>
+        const a = document.getElementById("a");
+        const b = document.getElementById("b");
+        function calc(){
+            document.getElementById("res").textContent=`${a.value}^${b.value}=${Math.pow(a.value,b.value)}`}
+        
+    </script>
+</body>
+</html>
