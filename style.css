@@ -143,10 +143,10 @@ body {
     margin-top: 20px;
 }
 .nginfo{
-    width: 85%;
+    width: 95%;
     border-left:#1d587f solid 2px;
     text-shadow: 2px 2px 2px #2574a9;
-    margin-left: 20px;
+    margin-left: 10px;
     color: hs;
     
 }
