@@ -15,11 +15,12 @@
     <input type="number"  id="st">
     <p>End</p>
     <input type="number"  id="end">
+    <buttin onclick="ent">OK</buttin>
     <p id="res"></p>
     <script>
         const st = document.getElementById("st");
         const end = document.getElementById("end");
-        end.onchange=function(){
+        function ent(){
         let res = document.getElementById("res");
         res.innerHTML =""
         for(let i =st.value; i <= end.value; i++){
