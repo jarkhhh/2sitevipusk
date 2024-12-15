@@ -7,10 +7,12 @@
 </head>
 <body>
     <canvas id="canv" width="300" height="300"></canvas>
+    <input onchange="ent(this.value)">
     <script>
         let canv =document.getElementById("canv");
         let ctx = canv.getContext("2d");
-        for(let i =0; i < 20; i++){
+        function ent(c){
+        for(let i =0; i < c; i++){
             let rx = Math.random() *210;
             let ry = Math.random()*210;
             ctx.fillStyle = "red";
@@ -30,6 +32,7 @@
             ctx.arc(cx,cy,30,0,2*Math.PI);
             ctx.fillStyle = "blue";
             ctx.fill()
+        }
         }
     </script>
 </body>
