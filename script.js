@@ -3,8 +3,8 @@ function changeBG(){
     document.body.style.backgroundColor = localStorage.getItem("bgcolor");
     
 }
-const obj =document.getElementById("colparm");
-function saveBgCol(){
+
+function saveBgCol(obj){
     localStorage.setItem("bgcolor",obj.value)
     changeBG();
 }
