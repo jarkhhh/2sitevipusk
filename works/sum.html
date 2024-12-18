@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+    <p>Enter numbers example:"1+2+3"</p>
     <form action="javascript:sum()">
     <textarea name="" id="inp"></textarea>
     <button>OK</button>
@@ -21,7 +22,7 @@
     <script>
         const area = document.getElementById("inp");
         function sum(){
-           let arr = area.value.split(' ');
+           let arr = area.value.split('+');
            let n =0;
            console.log(arr);
            arr.forEach((el) =>{
