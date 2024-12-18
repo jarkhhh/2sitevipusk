@@ -40,12 +40,13 @@
             let b =val.split('-');
             let year = b[0]
 
-            if(cdate.getFullYear()-year >= 16){
+            if(cdate.getFullYear()-year >= 16 && cdate.getFullYear()-year<100){
                 alert("Welcome!");
             }
             else{
-                alert("Your age too low! Access denied");
+                alert("Icorrect age! Access denied");
             }
+            
         }
     </script>
 </body>
