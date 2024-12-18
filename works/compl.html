@@ -28,7 +28,7 @@
         c.innerHTML = `<input type="number" onchange="gen(this)">`;
         for (let i = 1; i <= el.value; i++) {
             let txt = document.getElementById("result");
-            let rcol = colors[Math.floor(Math.random()*colors.lenght)]
+            let rcol = colors[Math.floor(Math.random()*(colors.lenght-1))]
         c.innerHTML+=`<p style="color: ${rcol}"> ${i})You are: ${compl[Math.floor(Math.random()*(compl.length-1))] } as ${animals[Math.floor(Math.random()*(animals.length-1))] }</p><br>`;
             
         }
