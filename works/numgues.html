@@ -32,7 +32,8 @@
         if(inp.value ==rand){
             r.textContent = "Correct"
         }else{
-            r.textContent ="Incorrect"
+            let perc =rand/inp.value*100
+            r.textContent =`Correct for ${perc}%`;
             atem --;
         }
         if(atem==0){
