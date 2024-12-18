@@ -21,8 +21,8 @@
             res.textContent = ""
             for (let i = 1; i < +inp.value; i++) {
               num = numbers[i] + numbers[i-1];
-              res.textContent += ` ${num}`
-              numbers.push(numbers[i]);
+              res.textContent += ` ${numbers[i]}`
+              numbers.push(num);
             }
         }
     </script>
