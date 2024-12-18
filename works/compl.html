@@ -22,12 +22,14 @@
    <script>
     let animals = ['kangoroo','elephant','cat','dog','girafe','camel','crocodile'];
     let compl = ['fast','smart','beatiful','cute','big','careful']
+    let colors =["red","aqua","blue","violet","white","magenta"]
     const c = document.getElementById("c");
     function gen(el){
         c.innerHTML = `<input type="number" onchange="gen(this)">`;
         for (let i = 1; i <= el.value; i++) {
             let txt = document.getElementById("result");
-        c.innerHTML+=`<p>${i})You are: ${compl[Math.floor(Math.random()*(compl.length-1))] } as ${animals[Math.floor(Math.random()*(animals.length-1))] }</p><br>`;
+            let rcol = colors[Math.floor(Math.random()*colors.lenght)]
+        c.innerHTML+=`<p style="color: ${rcol}"> ${i})You are: ${compl[Math.floor(Math.random()*(compl.length-1))] } as ${animals[Math.floor(Math.random()*(animals.length-1))] }</p><br>`;
             
         }
         
