@@ -19,10 +19,10 @@
         function gen(){
             let num =0;
             res.textContent = ""
-            for (let i = 0; i < +inp.value; i+=2) {
-              num = numbers[i] + numbers[i+1];
+            for (let i = 1; i < +inp.value; i++) {
+              num = numbers[i] + numbers[i-1];
               res.textContent += ` ${num}`
-              numbers.push(num);
+              numbers.push(numbers[i]);
             }
         }
     </script>
